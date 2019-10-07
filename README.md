@@ -6,10 +6,10 @@ I will assume you have Django installed but in case you don’t, you can use the
 
 To create a project run the following command in your terminal
 
-django-admin startproject mun
+django-admin startproject Lux
 And after the project is created go to its directory via cd command
 
-cd /mun
+cd /Lux
 And starting a server is as simple as
 
 python manage.py runserver
@@ -37,14 +37,41 @@ When the app is ready, we need to add it to Django’s INSTALLED_APPS. We’ll J
 
 
 INSTALLED_APPS = [
+
+
+
     'django.contrib.admin',
+    
+    
+    
     'django.contrib.auth',
+    
+    
+    
     'django.contrib.contenttypes',
+    
+    
+    
     'django.contrib.sessions',
+    
+    
+    
     'django.contrib.messages',
+    
+    
+    
     'django.contrib.staticfiles',
+    
+    
+    
     'pages',
+    
+    
+    
 ]
+
+
+
 
 
 
@@ -52,10 +79,10 @@ INSTALLED_APPS = [
 
 The newly created pages app has a new pages folder with a couple of python files. Particular ones that interest us are pages/urls.py and pages/views.py.
 
-URLs
-When a request comes to the server, Django has to find a “view”, a function that will process the request and send the response. The way Django finds how to connect a URL that came with the request and a view is via urlpatterns which are located in your project’s main directory. In my case, it’s mun/urls.py.
+# URLs
+When a request comes to the server, Django has to find a “view”, a function that will process the request and send the response. The way Django finds how to connect a URL that came with the request and a view is via urlpatterns which are located in your project’s main directory. In my case, it’s Lux/urls.py.
 
-In order to show our landing page on 127.0.0.1:8000 and essentially on our main domain we need to add the following code to pages/urls.py
+In order to show our landing page on 127.0.0.1:8000 and essentially on our main domain we need to add the following code to Home/urls.py
 
 from django.urls import path
 from . import views
@@ -68,9 +95,22 @@ A path is what comes after a domain in a URL. For example, in the URL https://ww
 We also need to add urlpatterns from our app to the main project’s urlpatterns with a built-in function include
 
 from django.contrib import admin
+
+
 from django.urls import include, path
 
+
+
 urlpatterns = [
-    path('', include('pages.urls')),
+
+
+    path('', include('Home.urls')),
+    
+    
     path('admin/', admin.site.urls),
+    
+    
 ]
+
+
+
