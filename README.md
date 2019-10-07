@@ -170,7 +170,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 	
 	
-	
+	#Add templates
         'DIRS': ['templates'],
 	
 	
